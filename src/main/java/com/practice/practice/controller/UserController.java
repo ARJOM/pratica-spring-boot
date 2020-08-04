@@ -22,4 +22,10 @@ public class UserController {
         userDao.save(user);
         return user;
     }
+
+    @GetMapping("/users/{email}")
+    public User detail(@PathVariable("email") String email){
+        return userDao.getByEmail(email);
+    }
+
 }
